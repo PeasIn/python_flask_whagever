@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGS</title>
+    <style>
+        .I-bg{
+            background-color: red;
+        }
+        .G-bg{
+            background-color: blue;
+        }
+        .S-bg{
+            background-color: green;
+        }
+        .letter-box{
+            display: inline-block;
+            padding: 50px;
+            color: black;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        {% for igs in data1 %}
+        <span class="letter-box {% if loop.index == 1 %}
+        I-bg{% elif loop.index == 2 %}
+        G-bg{% elif loop.index == 3 %}
+        S-bg{% endif %}">{{ igs }}</span>
+        {% endfor %}
+    </div>
+    <a href="/">Go to Home</a>
+</body>
+</html>
